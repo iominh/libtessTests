@@ -67,17 +67,3 @@ function triangulate(contours) {
 
   return triangleVerts;
 }
-
-function flattenArray(array) {
-  var flattenedArray = array.reduce(function (a, b) {
-    return a.concat(b);
-  });
-  return flattenedArray;
-}
-
-var triangleVerts = triangulate([
-  new Float32Array(flattenArray(trianglePositions)),
-  new Float32Array(flattenArray(circlePositions))
-]);
-console.log('Triangles returned: ' + (triangleVerts.length / 6));
-console.log(triangleVerts);
