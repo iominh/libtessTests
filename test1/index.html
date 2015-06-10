@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test1</title>
+	<script src="../libtess.debug.js"></script>
+	<script src="test_data.js"></script>
+	<script src="triangulate.js"></script>
+	<script>
+		function flattenArray(array) {
+			var flattenedArray = array.reduce(function (a, b) {
+				return a.concat(b);
+			});
+			return flattenedArray;
+		}
+
+		var results = triangulate([
+			new Float32Array(flattenArray(trianglePositions)),
+			new Float32Array(flattenArray(circlePositions))
+		]);
+		console.log(JSON.stringify(results));
+	</script>
+</head>
+
+<body>
+<canvas id="poly-view"></canvas>
+</body>
+</html>
