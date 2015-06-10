@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Test1</title>
 	<script src="../libtess.debug.js"></script>
-	<script src="test_data.js"></script>
+	<script src="test_data2.js"></script>
 	<script src="triangulate.js"></script>
 	<script>
 		function flattenArray(array) {
@@ -15,8 +15,8 @@
 		}
 
 		var triangleVerts = triangulate([
-			new Float32Array(flattenArray(trianglePositions)),
-			new Float32Array(flattenArray(circlePositions))
+			new Float32Array(flattenArray(trianglePositions2)),
+			new Float32Array(flattenArray(circlePositions2))
 		]);
 		console.log('Triangles returned: ' + (triangleVerts.length / 6));
 		console.log(JSON.stringify(triangleVerts));
